@@ -1,0 +1,17 @@
+type Cliente {
+	id: ID!,
+	nome: String,
+	cpf: String,
+	nomeMae: String,
+	dataNascimento: String
+}
+
+type Query {
+	clientes(count: Int):[Cliente]
+	cliente(id: ID):Cliente
+
+}
+
+type Mutation {
+	criarCliente(nome: String!, cpf: String!, nomeMae: String, dataNascimento: String):Cliente
+}
