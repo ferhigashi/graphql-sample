@@ -1,13 +1,18 @@
-package com.higashi.graphqlexample.entity;
+package com.higashi.graphql.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Cliente implements Serializable {
@@ -30,13 +35,10 @@ public class Cliente implements Serializable {
 
 	@Column(name = "data_nascimento")
     private LocalDate dataNascimento;
+	
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	private List<Telefone> telefones = new ArrayList<Telefone>();
     
-    private transient String dataNascimentoFormatada;
-    
-//  public String getDataNascimentoFormatada() {
-//  return getDataNascimento().toString();
-//}
-
 	public int getId() {
 		return id;
 	}
@@ -77,12 +79,16 @@ public class Cliente implements Serializable {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public String getDataNascimentoFormatada() {
-		return dataNascimentoFormatada;
+	public List<Telefone> getTelefones() {
+		return telefones;
 	}
 
-	public void setDataNascimentoFormatada(String dataNascimentoFormatada) {
-		this.dataNascimentoFormatada = dataNascimentoFormatada;
+	public void setTelefones(List<Telefone> telefones) {
+		this.telefones = telefones;
+	}
+	
+	public void addTelefone(Telefone telefone) {
+		this.telefones.add(telefone);
 	}
 
 }

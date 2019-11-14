@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.0.RELEASE</version>
+		<version>2.2.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.higashi</groupId>
-	<artifactId>graphqlexample</artifactId>
+	<artifactId>graphql-sample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>graphqlexample</name>
+	<name>graphql-sample</name>
 	<description>Demonstração Básica do GraphQL com Spring Boot</description>
 
 	<properties>
@@ -35,21 +35,27 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-        <dependency>
-            <groupId>com.graphql-java</groupId>
-            <artifactId>graphql-spring-boot-starter</artifactId>
-            <version>5.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.graphql-java</groupId>
-            <artifactId>graphql-java-tools</artifactId>
-            <version>5.2.4</version>
-        </dependency>
-        <dependency>
-            <groupId>com.graphql-java</groupId>
-            <artifactId>graphiql-spring-boot-starter</artifactId>
-            <version>5.0.2</version>
-        </dependency>
+		<dependency>
+			  <groupId>com.graphql-java-kickstart</groupId>
+			  <artifactId>graphql-spring-boot-starter</artifactId>
+			  <version>5.10.0</version>
+		</dependency>
+		<dependency>
+			  <groupId>com.graphql-java-kickstart</groupId>
+			  <artifactId>graphiql-spring-boot-starter</artifactId>
+			  <version>5.10.0</version>
+		</dependency>
+		<dependency>
+			  <groupId>com.graphql-java-kickstart</groupId>
+			  <artifactId>voyager-spring-boot-starter</artifactId>
+			  <version>5.10.0</version>
+		</dependency>
+		<dependency>
+			  <groupId>com.graphql-java-kickstart</groupId>
+			  <artifactId>graphql-spring-boot-starter-test</artifactId>
+			  <version>5.10.0</version>
+			  <scope>test</scope>
+		</dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
